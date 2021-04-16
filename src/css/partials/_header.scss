@@ -7,6 +7,7 @@ section#header-container {
 
       &.main {
         height: 60px;
+        padding: .2rem 0 0 .1rem;
         @include flex(row, flex-start, center);
 
         .logo {
@@ -25,16 +26,35 @@ section#header-container {
           @include flex(row, flex-start, stretch);
 
           .item {
+            color: $secondaryColor;
             @include flex(row, flex-star, center);
-            padding: 0 1.85rem;
+            padding: 0 1.62rem;
             cursor: pointer;
 
-            span, a {
-              color: $secondaryColor;
+            span {
+              height: 30px;
+              @include flex(row, center, center);
+
+              &:after {
+                @extend %fa-icon;
+                @extend .fas;
+                content: "\f107";
+                margin-left: .2rem;
+              }
             }
 
             a {
+              color: $secondaryColor;
               text-decoration: none;
+            }
+
+            &:hover {
+              color: $primaryColor;
+              background: $secondaryColor;
+
+              a {
+                color: $primaryColor;
+              }
             }
           }
         }
