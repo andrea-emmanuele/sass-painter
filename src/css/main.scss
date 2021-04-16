@@ -1,2 +1,5 @@
-@use "./partials/variables";
-@use "./partials/mixins";
+@import "./partials/variables";
+@import "./partials/mixins";
+@import "./partials/fonts";
+@import "./partials/normalize";
+@import "./partials/header";

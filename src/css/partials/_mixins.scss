@@ -1,0 +1,16 @@
+@mixin mainContainersWidth {
+  width: 61%;
+  margin: 0 auto;
+}
+
+/*flex*/
+@mixin flex($direction, $justify, $align) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin flexBasis($grow, $shrink, $basis) {
+  flex: $grow $shrink $basis;
+}

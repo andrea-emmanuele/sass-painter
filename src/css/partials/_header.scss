@@ -1,0 +1,44 @@
+section#header-container {
+  background: $primaryColor;
+
+  header {
+    nav {
+      height: 35px;
+
+      &.main {
+        height: 60px;
+        @include flex(row, flex-start, center);
+
+        .logo {
+          @include flexBasis(0, 0, 100px);
+          @include flex(row, center, center);
+
+          img {
+            width: 90%;
+          }
+        }
+
+        .nav-items {
+          font-size: $primarySize;
+          height: 100%;
+          @include flexBasis(1, 0, 50%);
+          @include flex(row, flex-start, stretch);
+
+          .item {
+            @include flex(row, flex-star, center);
+            padding: 0 1.85rem;
+            cursor: pointer;
+
+            span, a {
+              color: $secondaryColor;
+            }
+
+            a {
+              text-decoration: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
