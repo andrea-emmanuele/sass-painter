@@ -1,0 +1,109 @@
+nav {
+  height: 35px;
+
+  &.top {
+    @include flex(row, flex-end, center);
+
+    .actions {
+      @include flex(row, flex-end, center);
+      @include flexBasis(0, 0, 400px);
+
+      span {
+        font-size: $smallest;
+        color: $grey;
+        margin-right: 1.2rem;
+        @include flex(row, flex-start, end);
+        @include flexBasis(0, 0, 60px);
+
+        &:before {
+          font-size: $primarySize;
+          @extend %fa-icon;
+          @extend .fas;
+          color: $blue;
+          margin-right: .5rem;
+        }
+
+        &.call:before {
+          content: fa-content($fa-var-phone-alt);
+        }
+
+        &.chat:before {
+          content: fa-content($fa-var-comment-alt);
+        }
+
+        &.signin:before {
+          content: fa-content($fa-var-user);
+        }
+
+        &.cart:before {
+          content: fa-content($fa-var-shopping-cart);
+        }
+
+        a {
+          color: $grey;
+          text-decoration: none;
+        }
+      }
+
+      select {
+        font-size: $smallest;
+        padding: .1rem 0;
+      }
+    }
+  }
+
+  &.main {
+    height: 60px;
+    padding: .2rem 0 0 .1rem;
+    @include flex(row, flex-start, center);
+
+    .logo {
+      @include flexBasis(0, 0, 100px);
+      @include flex(row, center, center);
+
+      img {
+        width: 90%;
+      }
+    }
+
+    .nav-items {
+      font-size: $primarySize;
+      height: 100%;
+      @include flexBasis(1, 0, 50%);
+      @include flex(row, flex-start, stretch);
+
+      .item {
+        color: $secondaryColor;
+        @include flex(row, flex-star, center);
+        padding: 0 1.62rem;
+        cursor: pointer;
+
+        span {
+          height: 30px;
+          @include flex(row, center, center);
+
+          &:after {
+            @extend %fa-icon;
+            @extend .fas;
+            content: "\f107";
+            margin-left: .2rem;
+          }
+        }
+
+        a {
+          color: $secondaryColor;
+          text-decoration: none;
+        }
+
+        &:hover {
+          color: $primaryColor;
+          background: $secondaryColor;
+
+          a {
+            color: $primaryColor;
+          }
+        }
+      }
+    }
+  }
+}

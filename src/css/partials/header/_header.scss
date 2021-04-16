@@ -1,0 +1,7 @@
+section#header-container {
+  background: $primaryColor;
+
+  header {
+    @import "nav";
+  }
+}
