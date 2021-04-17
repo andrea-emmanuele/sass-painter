@@ -1,7 +1,8 @@
-section#header-container {
+header {
   background: $primaryColor;
 
-  header {
+  .content {
     @import "nav";
+    @include headerPadding;
   }
 }

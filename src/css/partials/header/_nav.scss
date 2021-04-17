@@ -47,7 +47,9 @@ nav {
 
       select {
         font-size: $smallest;
+        min-width: 70px;
         padding: .1rem 0;
+        display: inline-block;
       }
     }
   }

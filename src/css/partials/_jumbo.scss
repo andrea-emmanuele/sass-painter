@@ -2,6 +2,7 @@ section#jumbo {
   height: 480px;
   background: url($jumboPath) no-repeat center;
   background-size: cover;
+  @include headerPadding;
 
   .col {
     font-size: $bigger;

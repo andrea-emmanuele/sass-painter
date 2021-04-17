@@ -1,6 +1,14 @@
 @mixin mainContainersWidth {
-  width: 61%;
+  width: 63%;
   margin: 0 auto;
+}
+
+@mixin headerPadding {
+  padding: 0 1.5rem;
+}
+
+@mixin cardsInfoPadding {
+  padding: 1rem 1.5rem;
 }
 
 /*flex*/

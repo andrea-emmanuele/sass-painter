@@ -1,0 +1,15 @@
+main {
+  background: $mainBg;
+
+  .content {
+    padding-top: $normal;
+
+    > h1 {
+      font-weight: $normalWeight;
+      text-align: center;
+    }
+
+    @import "./cards";
+    @import "./body";
+  }
+}
