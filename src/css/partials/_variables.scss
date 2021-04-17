@@ -1,12 +1,26 @@
 /*font sizes*/
 $primarySize: .9rem;
 $smallest: .75rem;
+$normalSize: 1.1rem;
+$bigger: 1.3rem;
+
+/*font weight*/
+$light: 200;
+$normalWeight: 400;
+$bold: 600;
 
 /*colors*/
 $primaryColor: #101010;
 $secondaryColor: #fff;
-$blue: #009cff;
+$black: #000;
 $grey: #989898;
+$blue: #009cff;
+$violet: #c70eb8;
 
 /*images*/
 $jumboPath: "../img/bg-painter-home.jpg";
+
+/*spaces*/
+$less: 1rem;
+$normal: 2rem;
+$much: 4rem;

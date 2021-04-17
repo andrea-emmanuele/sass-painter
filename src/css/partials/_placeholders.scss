@@ -1,0 +1,11 @@
+%jumboBtn {
+  font-family: "Segoe UI", sans-serif;
+  font-style: normal;
+  font-size: $normalSize;
+  font-weight: $normalWeight;
+  text-decoration: none;
+  padding: .6rem 2rem;
+  border: 2px solid $black;
+  margin-right: $less;
+  display: inline-block;
+}

@@ -1,4 +1,52 @@
 section#jumbo {
-  height: 300px;
-  background: url($jumboPath);
+  height: 480px;
+  background: url($jumboPath) no-repeat center;
+  background-size: cover;
+
+  .col {
+    font-size: $bigger;
+    padding-top: $much;
+    width: 50%;
+
+    .title {
+      width: 250px;
+      margin-top: .6rem;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .inner-col {
+      padding-top: $less;
+
+      .body {
+        font-size: $normalSize;
+        font-style: italic;
+        color: $violet;
+        padding-top: $normal;
+
+        span {
+          font-weight: $bold;
+        }
+
+        .actions {
+          padding-top: $normal;
+
+          a {
+            @extend %jumboBtn;
+
+            &.learn {
+              color: $secondaryColor;
+              background: $black;
+            }
+
+            &.download {
+              color: $black;
+            }
+          }
+        }
+      }
+    }
+  }
 }
