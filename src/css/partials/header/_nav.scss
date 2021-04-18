@@ -15,6 +15,14 @@ nav {
         @include flex(row, flex-start, end);
         @include flexBasis(0, 0, 60px);
 
+        &.call {
+          @include flexBasis(0, 0, 108px);
+        }
+
+        &.chat {
+          @include flexBasis(0, 0, 50px);
+        }
+
         &:before {
           font-size: $primarySize;
           @extend %fa-icon;
@@ -103,6 +111,19 @@ nav {
             color: $primaryColor;
           }
         }
+      }
+    }
+  }
+
+  @media screen and (max-width: $mobile) {
+    &.top {
+      display: none;
+    }
+
+    &.main {
+      @include flex(row, center, center);
+      .nav-items {
+        display: none;
       }
     }
   }

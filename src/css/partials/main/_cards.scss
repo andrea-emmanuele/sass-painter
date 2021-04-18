@@ -3,8 +3,9 @@
   padding-top: $less + .3;
 
   .card {
-    background: $secondaryColor;
     $width: calc(33% - 1rem);
+
+    background: $secondaryColor;
     @include flexBasis(0, 0, $width);
     margin-right: $normal;
 

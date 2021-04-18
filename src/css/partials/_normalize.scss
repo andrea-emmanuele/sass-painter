@@ -5,8 +5,15 @@
   font-family: "Segoe UI Semilight", sans-serif;
 }
 
+html {
+  @media screen and (max-width: $mobile) {
+    font-size: 12px;
+  }
+}
+
 .content {
-  @include mainContainersWidth;
+  $width: 1200px !default;
+  @include mainContainersWidth($width);
 
   a {
     text-decoration: none;

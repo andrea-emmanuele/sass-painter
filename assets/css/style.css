@@ -6132,7 +6132,7 @@ header .content nav.top .actions span:before {
 /*images*/
 /*spaces*/
 /*flex*/
-main .content .body .inner-body .inner-content .info a, section#jumbo .col .inner-col .body .actions a {
+main .content .body .inner-body .inner-content .info a, section#jumbo .content .col .inner-col .body .actions a {
   font-family: "Segoe UI", sans-serif;
   font-style: normal;
   font-size: 1.1rem;
@@ -6170,8 +6170,14 @@ footer .content .inner-footer .socials span {
   font-family: "Segoe UI Semilight", sans-serif;
 }
 
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 12px;
+  }
+}
+
 .content {
-  width: 63%;
+  max-width: 1200px;
   margin: 0 auto;
 }
 .content a {
@@ -6222,6 +6228,12 @@ header .content nav.top .actions span {
   justify-content: flex-start;
   align-items: end;
   flex: 0 0 60px;
+}
+header .content nav.top .actions span.call {
+  flex: 0 0 108px;
+}
+header .content nav.top .actions span.chat {
+  flex: 0 0 50px;
 }
 header .content nav.top .actions span:before {
   font-size: 0.9rem;
@@ -6306,46 +6318,114 @@ header .content nav.main .nav-items .item:hover {
 header .content nav.main .nav-items .item:hover a {
   color: #101010;
 }
+@media screen and (max-width: 768px) {
+  header .content nav.top {
+    display: none;
+  }
+  header .content nav.main {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  header .content nav.main .nav-items {
+    display: none;
+  }
+}
 
 section#jumbo {
   height: 480px;
   background: url("../img/bg-painter-home.jpg") no-repeat center;
   background-size: cover;
+}
+section#jumbo .content {
   padding: 0 1.5rem;
 }
-section#jumbo .col {
+section#jumbo .content .col {
   font-size: 1.3rem;
   padding-top: 4rem;
   width: 50%;
 }
-section#jumbo .col .title {
+section#jumbo .content .col .title {
   width: 250px;
   margin-top: 0.6rem;
 }
-section#jumbo .col .title img {
+section#jumbo .content .col .title img {
   width: 100%;
 }
-section#jumbo .col .inner-col {
+section#jumbo .content .col .inner-col {
   padding-top: 1rem;
 }
-section#jumbo .col .inner-col .body {
+section#jumbo .content .col .inner-col .body {
   font-size: 1.1rem;
   font-style: italic;
   color: #c70eb8;
   padding-top: 2rem;
 }
-section#jumbo .col .inner-col .body span {
+section#jumbo .content .col .inner-col .body span {
   font-weight: 600;
 }
-section#jumbo .col .inner-col .body .actions {
+section#jumbo .content .col .inner-col .body .actions {
   padding-top: 2rem;
 }
-section#jumbo .col .inner-col .body .actions a.learn {
+section#jumbo .content .col .inner-col .body .actions a.learn {
   color: #fff;
   background: #000;
 }
-section#jumbo .col .inner-col .body .actions a.download {
+section#jumbo .content .col .inner-col .body .actions a.download {
   color: #000;
+}
+@media screen and (max-width: 768px) {
+  section#jumbo {
+    position: relative;
+    height: 420px;
+    background-size: 490%;
+    background-position: 66.6% 53%;
+  }
+  section#jumbo:after {
+    position: absolute;
+    top: 0;
+    background: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    height: 100%;
+    content: "";
+  }
+  section#jumbo .content {
+    position: relative;
+    z-index: 2;
+  }
+  section#jumbo .content .col {
+    color: #fff;
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  section#jumbo .content .col .title img {
+    filter: invert(100%);
+  }
+  section#jumbo .content .col .inner-col .body {
+    color: #fff;
+    padding-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  section#jumbo .content .col .inner-col .body .actions {
+    order: -1;
+    padding-bottom: 1rem;
+  }
+  section#jumbo .content .col .inner-col .body .actions a {
+    color: #101010 !important;
+    background: #fff !important;
+    border: none;
+  }
+  section#jumbo .content .col .inner-col .body .actions a.download {
+    display: none;
+  }
 }
 
 main {

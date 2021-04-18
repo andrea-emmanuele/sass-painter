@@ -2,48 +2,109 @@ section#jumbo {
   height: 480px;
   background: url($jumboPath) no-repeat center;
   background-size: cover;
-  @include headerPadding;
 
-  .col {
-    font-size: $bigger;
-    padding-top: $much;
-    width: 50%;
+  .content {
+    @include headerPadding;
 
-    .title {
-      width: 250px;
-      margin-top: .6rem;
+    .col {
+      font-size: $bigger;
+      padding-top: $much;
+      width: 50%;
 
-      img {
+      .title {
+        width: 250px;
+        margin-top: .6rem;
+
+        img {
+          width: 100%;
+        }
+      }
+
+      .inner-col {
+        padding-top: $less;
+
+        .body {
+          font-size: $normalSize;
+          font-style: italic;
+          color: $violet;
+          padding-top: $normal;
+
+          span {
+            font-weight: $bold;
+          }
+
+          .actions {
+            padding-top: $normal;
+
+            a {
+              @extend %jumboBtn;
+
+              &.learn {
+                color: $secondaryColor;
+                background: $black;
+              }
+
+              &.download {
+                color: $black;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: $mobile) {
+    & {
+      position: relative;
+      height: 420px;
+      background-size: 490%;
+      background-position: 66.6% 53%;
+
+      &:after {
+        position: absolute;
+        top: 0;
+        background: rgba(0, 0, 0, .6);
         width: 100%;
+        height: 100%;
+        content: "";
       }
     }
 
-    .inner-col {
-      padding-top: $less;
+    .content {
+      position: relative;
+      z-index: 2;
+      .col {
+        color: $secondaryColor;
+        text-align: center;
+        width: 100%;
+        @include flex(column, center, center);
 
-      .body {
-        font-size: $normalSize;
-        font-style: italic;
-        color: $violet;
-        padding-top: $normal;
-
-        span {
-          font-weight: $bold;
+        .title {
+          img {
+            filter: invert(100%);
+          }
         }
 
-        .actions {
-          padding-top: $normal;
+        .inner-col {
+          .body {
+            color: $secondaryColor;
+            padding-top: $less;
+            @include flex(column, center, center);
 
-          a {
-            @extend %jumboBtn;
+            .actions {
+              order: -1;
+              padding-bottom: $less;
 
-            &.learn {
-              color: $secondaryColor;
-              background: $black;
-            }
+              a {
+                color: $primaryColor !important;
+                background: $secondaryColor !important;
+                border: none;
 
-            &.download {
-              color: $black;
+                &.download {
+                  display: none;
+                }
+              }
             }
           }
         }
