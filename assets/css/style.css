@@ -5,12 +5,14 @@
  */
 .fa,
 .fas,
+footer .content .inner-footer .socials span.rss:before,
 header .content nav.main .nav-items .item span:after,
 header .content nav.top .actions span:before,
 .far,
 .fal,
 .fad,
-.fab {
+.fab,
+footer .content .inner-footer .socials span {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   display: inline-block;
@@ -20,7 +22,7 @@ header .content nav.top .actions span:before,
   line-height: 1;
 }
 
-header .content nav.main .nav-items .item span:after, header .content nav.top .actions span:before {
+header .content nav.main .nav-items .item span:after, header .content nav.top .actions span:before, footer .content .inner-footer .socials span {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   display: inline-block;
@@ -122,20 +124,24 @@ header .content nav.main .nav-items .item span:after, header .content nav.top .a
 
 .fa.fa-pull-left,
 .fas.fa-pull-left,
+footer .content .inner-footer .socials span.fa-pull-left.rss:before,
 header .content nav.main .nav-items .item span.fa-pull-left:after,
 header .content nav.top .actions span.fa-pull-left:before,
 .far.fa-pull-left,
 .fal.fa-pull-left,
-.fab.fa-pull-left {
+.fab.fa-pull-left,
+footer .content .inner-footer .socials span.fa-pull-left {
   margin-right: 0.3em;
 }
 .fa.fa-pull-right,
 .fas.fa-pull-right,
+footer .content .inner-footer .socials span.fa-pull-right.rss:before,
 header .content nav.main .nav-items .item span.fa-pull-right:after,
 header .content nav.top .actions span.fa-pull-right:before,
 .far.fa-pull-right,
 .fal.fa-pull-right,
-.fab.fa-pull-right {
+.fab.fa-pull-right,
+footer .content .inner-footer .socials span.fa-pull-right {
   margin-left: 0.3em;
 }
 
@@ -6095,15 +6101,34 @@ readers do not read off random characters that represent icons */
 }
 .fa,
 .fas,
+footer .content .inner-footer .socials span.rss:before,
 header .content nav.main .nav-items .item span:after,
 header .content nav.top .actions span:before {
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
 }
 
+/*!
+ * Font Awesome Free 5.15.3 by @fontawesome - https://fontawesome.com
+ * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
+ */
+@font-face {
+  font-family: "Font Awesome 5 Brands";
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src: url("./webfonts/fa-brands-400.eot");
+  src: url("./webfonts/fa-brands-400.eot?#iefix") format("embedded-opentype"), url("./webfonts/fa-brands-400.woff2") format("woff2"), url("./webfonts/fa-brands-400.woff") format("woff"), url("./webfonts/fa-brands-400.ttf") format("truetype"), url("./webfonts/fa-brands-400.svg#fontawesome") format("svg");
+}
+.fab, footer .content .inner-footer .socials span {
+  font-family: "Font Awesome 5 Brands";
+  font-weight: 400;
+}
+
 /*font sizes*/
 /*font weight*/
 /*colors*/
+/*icons colors*/
 /*images*/
 /*spaces*/
 /*flex*/
@@ -6112,11 +6137,15 @@ main .content .body .inner-body .inner-content .info a, section#jumbo .col .inne
   font-style: normal;
   font-size: 1.1rem;
   font-weight: 400;
-  text-decoration: none;
   padding: 0.6rem 2rem;
   border: 2px solid #000;
   margin-right: 1rem;
   display: inline-block;
+}
+
+footer .content .inner-footer .socials span {
+  font-size: 1.3rem;
+  color: #fff;
 }
 
 @font-face {
@@ -6144,6 +6173,9 @@ main .content .body .inner-body .inner-content .info a, section#jumbo .col .inne
 .content {
   width: 63%;
   margin: 0 auto;
+}
+.content a {
+  text-decoration: none;
 }
 
 /*backgrounds*/
@@ -6210,7 +6242,6 @@ header .content nav.top .actions span.cart:before {
 }
 header .content nav.top .actions span a {
   color: #989898;
-  text-decoration: none;
 }
 header .content nav.top .actions select {
   font-size: 0.75rem;
@@ -6267,7 +6298,6 @@ header .content nav.main .nav-items .item span:after {
 }
 header .content nav.main .nav-items .item a {
   color: #fff;
-  text-decoration: none;
 }
 header .content nav.main .nav-items .item:hover {
   color: #101010;
@@ -6364,7 +6394,6 @@ main .content .cards .card .info p, main .content .cards .card .info a {
 }
 main .content .cards .card .info a {
   color: #009cff;
-  text-decoration: none;
   display: inline-block;
 }
 main .content .body {
@@ -6412,6 +6441,109 @@ main .content .body .inner-body .inner-content img.absolute {
   top: 10%;
   left: 2%;
   width: 450px;
+}
+
+footer {
+  background: #ececec;
+}
+footer .content {
+  padding: 0 1.5rem;
+  padding-top: 4rem;
+  padding-bottom: 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+footer .content .inner-footer {
+  flex: 0 0 25%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+footer .content .inner-footer > a {
+  font-size: 0.75rem;
+  color: #4d4d4d;
+  margin-top: 0.5rem;
+}
+footer .content .inner-footer .socials {
+  width: 230px;
+  padding-top: 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+footer .content .inner-footer .socials span:before {
+  width: 32px;
+  height: 32px;
+  padding-top: 0.1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+footer .content .inner-footer .socials span.ig:before {
+  content: "";
+  font-size: 1.6rem;
+  background: #e4405f;
+}
+footer .content .inner-footer .socials span.fb:before {
+  content: "";
+  background: #3b5998;
+}
+footer .content .inner-footer .socials span.tw:before {
+  content: "";
+  background: #1da1f2;
+}
+footer .content .inner-footer .socials span.yb:before {
+  content: "";
+  background: #cd201f;
+}
+footer .content .inner-footer .socials span.pt:before {
+  content: "";
+  background: #bd081c;
+}
+footer .content .inner-footer .socials span.rss:before {
+  content: "";
+  background: #ff8d00;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+footer section#pie {
+  background: #1e1e1e;
+}
+footer section#pie .content {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+footer section#pie .content .inner-pie {
+  font-size: 0.75rem;
+  flex: 0 0 350px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+footer section#pie .content .inner-pie a {
+  color: #989898;
+}
+footer section#pie .content .inner-pie p {
+  color: #fff;
+}
+footer section#pie .content .inner-pie:last-of-type {
+  flex: 0 0 500px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
 }
 
 /*# sourceMappingURL=style.css.map */

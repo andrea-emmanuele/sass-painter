@@ -1,0 +1,28 @@
+section#pie {
+  background: $pieBg;
+
+  .content {
+    padding-top: $less;
+    padding-bottom: $less;
+    @include flex(row, space-between, center);
+
+    .inner-pie {
+      font-size: $smallest;
+      @include flexBasis(0, 0, 350px);
+      @include flex(row, space-around, center);
+
+      a {
+        color: $grey;
+      }
+
+      p {
+        color: $secondaryColor;
+      }
+
+      &:last-of-type {
+        @include flexBasis(0, 0, 500px);
+        @include flex(row, space-around, center);
+      }
+    }
+  }
+}

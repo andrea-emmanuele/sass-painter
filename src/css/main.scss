@@ -1,5 +1,6 @@
 @import "./icons/fontawesome";
 @import "./icons/solid";
+@import "./icons/brands";
 @import "./partials/variables";
 @import "./partials/mixins";
 @import "./partials/placeholders";
@@ -7,5 +8,6 @@
 @import "./partials/normalize";
 @import "./partials/utilities";
 @import "./partials/header/header";
-@import "partials/jumbo";
-@import "partials/main/main";
+@import "./partials/jumbo";
+@import "./partials/main/main";
+@import "./partials/footer/footer";

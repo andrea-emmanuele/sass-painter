@@ -3,9 +3,15 @@
   font-style: normal;
   font-size: $normalSize;
   font-weight: $normalWeight;
-  text-decoration: none;
   padding: .6rem 2rem;
   border: 2px solid $black;
   margin-right: $less;
   display: inline-block;
+}
+
+%socialIcon {
+  @extend %fa-icon;
+  @extend .fab;
+  font-size: $bigger;
+  color: $secondaryColor;
 }

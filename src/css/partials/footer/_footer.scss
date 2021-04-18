@@ -1,0 +1,68 @@
+footer {
+  background: $footerBg;
+
+  .content {
+    @include headerPadding;
+    padding-top: $much;
+    padding-bottom: $normal;
+    @include flex(row, flex-start, flex-start);
+
+    .inner-footer {
+      @include flexBasis(0, 0, 25%);
+      @include flex(column, flex-start, flex-start);
+
+      > a {
+        font-size: $smallest;
+        color: $footerLinks;
+        margin-top: $little;
+      }
+
+      .socials {
+        width: 230px;
+        padding-top: $normal;
+        @include flex(row, space-between, flex-start);
+
+        span {
+          @extend %socialIcon;
+
+          &:before {
+            width: 32px;
+            height: 32px;
+            padding-top: .1rem;
+            @include flex(row, center, center);
+          }
+
+          &.ig:before {
+            content: "\f16d";
+            font-size: $biggest;
+            background: $ig;
+          }
+          &.fb:before {
+            content: "\f39e";
+            background: $fb;
+          }
+          &.tw:before {
+            content: "\f099";
+            background: $tw;
+          }
+          &.yb:before {
+            content: "\f167";
+            background: $yb;
+          }
+          &.pt:before {
+            content: "\f231";
+            background: $pt;
+          }
+          &.rss:before {
+            @extend .fas;
+            content: "\f09e";
+            background: $rss;
+            @include flex(row, center, center);
+          }
+        }
+      }
+    }
+  }
+
+  @import "./pie";
+}
