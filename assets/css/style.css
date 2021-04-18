@@ -7,6 +7,7 @@
 .fas,
 footer .content .inner-footer .socials span.rss:before,
 header .content nav.main .nav-items .item span:after,
+header .content nav.main .mobile-menu button:after,
 header .content nav.top .actions span:before,
 .far,
 .fal,
@@ -22,7 +23,7 @@ footer .content .inner-footer .socials span {
   line-height: 1;
 }
 
-header .content nav.main .nav-items .item span:after, header .content nav.top .actions span:before, footer .content .inner-footer .socials span {
+header .content nav.main .nav-items .item span:after, header .content nav.main .mobile-menu button:after, header .content nav.top .actions span:before, footer .content .inner-footer .socials span {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   display: inline-block;
@@ -126,6 +127,7 @@ header .content nav.main .nav-items .item span:after, header .content nav.top .a
 .fas.fa-pull-left,
 footer .content .inner-footer .socials span.fa-pull-left.rss:before,
 header .content nav.main .nav-items .item span.fa-pull-left:after,
+header .content nav.main .mobile-menu button.fa-pull-left:after,
 header .content nav.top .actions span.fa-pull-left:before,
 .far.fa-pull-left,
 .fal.fa-pull-left,
@@ -137,6 +139,7 @@ footer .content .inner-footer .socials span.fa-pull-left {
 .fas.fa-pull-right,
 footer .content .inner-footer .socials span.fa-pull-right.rss:before,
 header .content nav.main .nav-items .item span.fa-pull-right:after,
+header .content nav.main .mobile-menu button.fa-pull-right:after,
 header .content nav.top .actions span.fa-pull-right:before,
 .far.fa-pull-right,
 .fal.fa-pull-right,
@@ -6103,6 +6106,7 @@ readers do not read off random characters that represent icons */
 .fas,
 footer .content .inner-footer .socials span.rss:before,
 header .content nav.main .nav-items .item span:after,
+header .content nav.main .mobile-menu button:after,
 header .content nav.top .actions span:before {
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
@@ -6170,7 +6174,7 @@ footer .content .inner-footer .socials span {
   font-family: "Segoe UI Semilight", sans-serif;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   html {
     font-size: 12px;
   }
@@ -6182,6 +6186,14 @@ footer .content .inner-footer .socials span {
 }
 .content a {
   text-decoration: none;
+}
+
+.artist {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  color: #989898;
+  z-index: 2;
 }
 
 /*backgrounds*/
@@ -6269,6 +6281,20 @@ header .content nav.main {
   justify-content: flex-start;
   align-items: center;
 }
+header .content nav.main .mobile-menu {
+  position: absolute;
+  left: 0;
+  display: none;
+}
+header .content nav.main .mobile-menu button {
+  all: unset;
+  font-size: 1.8rem;
+  color: #fff;
+  cursor: pointer;
+}
+header .content nav.main .mobile-menu button:after {
+  content: "";
+}
 header .content nav.main .logo {
   flex: 0 0 100px;
   display: flex;
@@ -6318,15 +6344,19 @@ header .content nav.main .nav-items .item:hover {
 header .content nav.main .nav-items .item:hover a {
   color: #101010;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   header .content nav.top {
     display: none;
   }
   header .content nav.main {
+    position: relative;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
+  }
+  header .content nav.main .mobile-menu {
+    display: block;
   }
   header .content nav.main .nav-items {
     display: none;
@@ -6334,9 +6364,14 @@ header .content nav.main .nav-items .item:hover a {
 }
 
 section#jumbo {
+  position: relative;
   height: 480px;
   background: url("../img/bg-painter-home.jpg") no-repeat center;
   background-size: cover;
+}
+section#jumbo .artist {
+  bottom: 30px;
+  right: 25px;
 }
 section#jumbo .content {
   padding: 0 1.5rem;
@@ -6375,7 +6410,7 @@ section#jumbo .content .col .inner-col .body .actions a.learn {
 section#jumbo .content .col .inner-col .body .actions a.download {
   color: #000;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   section#jumbo {
     position: relative;
     height: 420px;
@@ -6451,6 +6486,7 @@ main .content .cards .card {
   margin-right: 2rem;
 }
 main .content .cards .card .artwork {
+  position: relative;
   height: 200px;
 }
 main .content .cards .card .artwork > img {
@@ -6475,6 +6511,23 @@ main .content .cards .card .info p, main .content .cards .card .info a {
 main .content .cards .card .info a {
   color: #009cff;
   display: inline-block;
+}
+@media screen and (max-width: 767px) {
+  main .content .cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+  main .content .cards .card {
+    flex: 0 0 92%;
+    margin: unset;
+    margin-bottom: 2rem;
+  }
+  main .content .cards .card:last-of-type {
+    margin: unset;
+  }
 }
 main .content .body {
   padding-top: 4rem;
@@ -6512,6 +6565,11 @@ main .content .body .inner-body .inner-content .info a {
   border: none;
   display: inline-block;
 }
+main .content .body .inner-body .inner-content .artist {
+  bottom: 10px;
+  left: 10px;
+  font-size: 1.1rem;
+}
 main .content .body .inner-body .inner-content img {
   width: 100%;
   display: flex;
@@ -6521,6 +6579,40 @@ main .content .body .inner-body .inner-content img.absolute {
   top: 10%;
   left: 2%;
   width: 450px;
+}
+@media screen and (max-width: 767px) {
+  main .content .body .inner-body {
+    height: 550px;
+    flex-wrap: wrap;
+  }
+  main .content .body .inner-body:nth-child(2) .inner-content {
+    height: 300px;
+  }
+  main .content .body .inner-body:nth-child(2) .inner-content:last-of-type {
+    height: 250px;
+    order: -1;
+  }
+  main .content .body .inner-body .inner-content {
+    overflow: hidden;
+    height: 250px;
+    flex: 0 0 100%;
+  }
+  main .content .body .inner-body .inner-content:last-of-type {
+    height: 300px;
+  }
+  main .content .body .inner-body .inner-content .info {
+    margin: 10% auto;
+  }
+  main .content .body .inner-body .inner-content img {
+    width: 130%;
+    height: 100%;
+  }
+  main .content .body .inner-body .inner-content img.absolute {
+    top: 10px;
+    left: 10px;
+    width: 260px;
+    height: auto;
+  }
 }
 
 footer {
@@ -6593,6 +6685,24 @@ footer .content .inner-footer .socials span.rss:before {
   justify-content: center;
   align-items: center;
 }
+@media screen and (max-width: 767px) {
+  footer .content {
+    flex-wrap: wrap;
+  }
+  footer .content .inner-footer {
+    margin-bottom: 2rem;
+    flex: 0 0 100%;
+  }
+  footer .content .inner-footer:last-of-type {
+    margin-bottom: unset;
+  }
+  footer .content .inner-footer span {
+    font-size: 1.3rem;
+  }
+  footer .content .inner-footer a {
+    font-size: 1.1rem;
+  }
+}
 footer section#pie {
   background: #1e1e1e;
 }
@@ -6624,6 +6734,28 @@ footer section#pie .content .inner-pie:last-of-type {
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
+}
+@media screen and (max-width: 767px) {
+  footer section#pie .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  footer section#pie .content .inner-pie {
+    font-size: 0.9rem;
+    flex: 0 0 80px;
+  }
+  footer section#pie .content .inner-pie a {
+    margin-right: 1rem;
+  }
+  footer section#pie .content .inner-pie:last-of-type {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex: 0 0 30px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

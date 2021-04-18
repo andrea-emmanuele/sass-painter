@@ -10,6 +10,7 @@
     margin-right: $normal;
 
     .artwork {
+      position: relative;
       height: 200px;
 
       > img {
@@ -41,6 +42,25 @@
 
       @include flexBasis(column, flex-start, flex-start);
       @include cardsInfoPadding;
+    }
+
+  }
+
+  @media screen and (max-width: $mobile) {
+    & {
+      @include flex(row, center, flex-start);
+      flex-wrap: wrap;
+
+      .card {
+        $width: 92%;
+        @include flexBasis(0, 0, $width);
+        margin: unset;
+        margin-bottom: $normal;
+
+        &:last-of-type {
+          margin: unset;
+        }
+      }
     }
   }
 }

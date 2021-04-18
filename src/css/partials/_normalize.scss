@@ -19,3 +19,11 @@ html {
     text-decoration: none;
   }
 }
+
+.artist {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  color: $grey;
+  z-index: 2;
+}

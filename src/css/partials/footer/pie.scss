@@ -24,5 +24,25 @@ section#pie {
         @include flex(row, space-around, center);
       }
     }
+
+    @media screen and (max-width: $mobile) {
+      & {
+        @include flex(column, flex-start, flex-start);
+
+        .inner-pie {
+          font-size: $primarySize;
+          @include flexBasis(0, 0, 80px);
+
+          a {
+            margin-right: $less;
+          }
+
+          &:last-of-type {
+            @include flex(column, flex-start, flex-start);
+            @include flexBasis(0, 0, 30px);
+          }
+        }
+      }
+    }
   }
 }

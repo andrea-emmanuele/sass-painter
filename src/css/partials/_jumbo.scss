@@ -1,7 +1,13 @@
 section#jumbo {
+  position: relative;
   height: 480px;
   background: url($jumboPath) no-repeat center;
   background-size: cover;
+
+  .artist {
+    bottom: 30px;
+    right: 25px;
+  }
 
   .content {
     @include headerPadding;

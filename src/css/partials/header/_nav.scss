@@ -66,6 +66,26 @@ nav {
     padding: .2rem 0 0 .1rem;
     @include flex(row, flex-start, center);
 
+    .mobile-menu {
+      position: absolute;
+      left: 0;
+
+      button {
+        all: unset;
+        font-size: $biggest + .2;
+        color: $secondaryColor;
+        cursor: pointer;
+
+        &:after {
+          @extend %fa-icon;
+          @extend .fas;
+          content: "\f0c9";
+        }
+      }
+
+      display: none;
+    }
+
     .logo {
       @include flexBasis(0, 0, 100px);
       @include flex(row, center, center);
@@ -121,7 +141,13 @@ nav {
     }
 
     &.main {
+      position: relative;
       @include flex(row, center, center);
+
+      .mobile-menu {
+        display: block;
+      }
+
       .nav-items {
         display: none;
       }
